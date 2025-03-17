@@ -55,13 +55,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-    <style>
-        #MainMenu {visibility: hidden;}
-    </style>
-""", unsafe_allow_html=True)
-
-
 # --- Streamlit UI setup ---
 st.title("📚 Personal Library Manager")
 menu = ["Add a Book", "Remove a Book", "Search for a Book", "Display All Books", "Display Statistics"]
