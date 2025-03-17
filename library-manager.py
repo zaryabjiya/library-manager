@@ -48,8 +48,8 @@ st.markdown("""
     <style>
         body { background: linear-gradient(to right, #ff7e5f, #feb47b); color: white; }
         .sidebar .sidebar-content { background-color: #2c3e50; }
-        .stButton>button { background-color: #3498db; color: #ffffff; border-radius: 8px; padding: 10px 18px; }
-        .stButton>button:hover { background-color: #2980b9; }
+        .stButton>button { background: linear-gradient(to right, #1e3c72, #2a5298); color: #ffffff; border-radius: 8px; padding: 10px 18px; border: none; }
+        .stButton>button:hover { background: linear-gradient(to right, #2a5298, #1e3c72); }
         .book-card { border: 2px solid #ddd; padding: 12px; border-radius: 12px; background-color: #ffffff; color: black; margin: 12px 0; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); }
         .stProgress>div>div>div { background-color: #27ae60; }
     </style>
