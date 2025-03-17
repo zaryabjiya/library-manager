@@ -66,7 +66,7 @@ if choice == "Add a Book":
     title = st.text_input("📖 Title")
     author = st.text_input("✍️ Author")
     year = st.number_input("📅 Publication Year", min_value=0, max_value=2100, value=2024)
-    genre = st.text_input("📂 Genre")
+    genre = st.selectbox("📂 Genre", ["Fiction", "Non-fiction", "Mystery", "Fantasy", "Science Fiction", "Biography", "History", "Self-help", "Other"])
     read = st.checkbox("✅ Have you read this book?")
     if st.button("➕ Add Book"):
         if title and author:
