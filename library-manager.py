@@ -2,10 +2,8 @@ import streamlit as st
 import json
 import os
 
-# --- File setup ---
 FILE_PATH = os.path.join(os.getcwd(), "library.json")
 
-# --- Load library data ---
 def load_library():
     try:
         with open(FILE_PATH, "r") as file:
@@ -13,16 +11,13 @@ def load_library():
     except (FileNotFoundError, json.JSONDecodeError):
         return []
 
-# --- Save library data ---
 def save_library(data):
     with open(FILE_PATH, "w") as file:
         json.dump(data, file, indent=4)
 
-# --- Initialize library in session state ---
 if "library" not in st.session_state:
     st.session_state.library = load_library()
 
-# --- Functions for managing books ---
 def add_book(title, author, year, genre, read):
     book = {"title": title, "author": author, "year": year, "genre": genre, "read": read}
     st.session_state.library.append(book)
@@ -43,7 +38,6 @@ def display_statistics():
     percentage_read = (read_books / total_books * 100) if total_books > 0 else 0
     return total_books, percentage_read
 
-# --- Custom Styling ---
 st.markdown("""
     <style>
         body { background: linear-gradient(to right, #ff7e5f, #feb47b); color: white; }
@@ -55,12 +49,10 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- Streamlit UI setup ---
 st.title("📚 Personal Library Manager")
 menu = ["Add a Book", "Remove a Book", "Search for a Book", "Display All Books", "Display Statistics"]
 choice = st.sidebar.selectbox("📌 Menu", menu)
 
-# --- Add Book ---
 if choice == "Add a Book":
     st.subheader("📘 Add a New Book")
     title = st.text_input("📖 Title")
@@ -74,7 +66,6 @@ if choice == "Add a Book":
         else:
             st.error("❌ Title and Author are required!")
 
-# --- Remove Book ---
 elif choice == "Remove a Book":
     st.subheader("🗑️ Remove a Book")
     title = st.text_input("Enter the title of the book to remove")
@@ -84,7 +75,6 @@ elif choice == "Remove a Book":
         else:
             st.warning("⚠️ Please enter a book title.")
 
-# --- Search Books ---
 elif choice == "Search for a Book":
     st.subheader("🔍 Search for a Book")
     search_by = st.radio("Search by", ["title", "author"])
@@ -103,7 +93,6 @@ elif choice == "Search for a Book":
         else:
             st.warning("⚠️ No matching books found.")
 
-# --- Display All Books ---
 elif choice == "Display All Books":
     st.subheader("📚 Your Library")
     if st.session_state.library:
@@ -118,7 +107,6 @@ elif choice == "Display All Books":
     else:
         st.info("📭 Your library is empty!")
 
-# --- Display Statistics ---
 elif choice == "Display Statistics":
     st.subheader("📊 Library Statistics")
     total_books, percentage_read = display_statistics()
@@ -126,12 +114,10 @@ elif choice == "Display Statistics":
     st.progress(percentage_read / 100)
     st.write(f"✅ *Percentage Read:* {percentage_read:.2f}%")
 
-# --- Reset Button ---
 if st.sidebar.button("🔄 Reset Library Data"):
     st.session_state.library = []
     save_library([])
     st.warning("⚠️ Library data reset!")
 
-# Footer
 st.markdown("---")
 st.markdown("🚀 Developed by **Zaryab Irfan**")
