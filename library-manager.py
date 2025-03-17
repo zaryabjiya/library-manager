@@ -134,4 +134,4 @@ if st.sidebar.button("🔄 Reset Library Data"):
 
 # Footer
 st.markdown("---")
-st.markdown("🚀 Developed by **Zaryab Irfan**")v
+st.markdown("🚀 Developed by **Zaryab Irfan**")
