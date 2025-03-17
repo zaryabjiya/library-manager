@@ -46,17 +46,22 @@ def display_statistics():
 # --- Custom Styling ---
 st.markdown("""
     <style>
-        body { background-color: #f5f5f5; }
+        body { background-color: #f0f8ff; }
         .sidebar .sidebar-content { background-color: #2c3e50; }
         .stButton>button { background-color: #3498db; color: #ffffff; border-radius: 8px; padding: 8px 16px; }
         .stButton>button:hover { background-color: #2980b9; }
         .book-card { border: 1px solid #ddd; padding: 10px; border-radius: 10px; background-color: #ffffff; margin: 10px 0; }
         .stProgress>div>div>div { background-color: #27ae60; }
+        .main-container { background: linear-gradient(135deg, #8e44ad, #3498db); padding: 20px; border-radius: 15px; }
+        .title-text { color: white; text-align: center; font-size: 24px; font-weight: bold; }
     </style>
 """, unsafe_allow_html=True)
 
 # --- Streamlit UI setup ---
-st.title("📚 Personal Library Manager")
+st.markdown("<div class='main-container'>", unsafe_allow_html=True)
+st.markdown("<p class='title-text'>📚 Personal Library Manager</p>", unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True)
+
 menu = ["Add a Book", "Remove a Book", "Search for a Book", "Display All Books", "Display Statistics"]
 choice = st.sidebar.selectbox("📌 Menu", menu)
 
