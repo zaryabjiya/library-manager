@@ -46,11 +46,11 @@ def display_statistics():
 # --- Custom Styling ---
 st.markdown("""
     <style>
-        body { background: linear-gradient(to right, #6a11cb, #2575fc); color: white; }
+        body { background-color: #f5f5f5; }
         .sidebar .sidebar-content { background-color: #2c3e50; }
-        .stButton>button { background-color: #ff9800; color: #ffffff; border-radius: 8px; padding: 10px 18px; }
-        .stButton>button:hover { background-color: #e68900; }
-        .book-card { border: 2px solid #ddd; padding: 12px; border-radius: 12px; background-color: #ffffff; color: black; margin: 12px 0; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); }
+        .stButton>button { background-color: #3498db; color: #ffffff; border-radius: 8px; padding: 8px 16px; }
+        .stButton>button:hover { background-color: #2980b9; }
+        .book-card { border: 1px solid #ddd; padding: 10px; border-radius: 10px; background-color: #ffffff; margin: 10px 0; }
         .stProgress>div>div>div { background-color: #27ae60; }
     </style>
 """, unsafe_allow_html=True)
